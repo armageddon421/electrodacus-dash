@@ -9,8 +9,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "uplot": "^1.1.1",
+    "v-tooltip": "^2.0.3",
     "vue": "^3.0.0-0",
-    "vue-router": "^4.0.0-0"
+    "vue-magic-grid": "0.0.4",
+    "vue-router": "^4.0.0-0",
+    "vue-simple-upload": "^0.1.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -25,7 +29,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^7.0.0-0"
+    "eslint-plugin-vue": "^7.0.0-0",
+    "vue-cli-plugin-compression": "^1.0.3"
   },
   "eslintConfig": {
     "root": true,
@@ -33,13 +38,12 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
+      "plugin:vue/essential",
       "@vue/standard"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
-    },
-    "rules": {}
+    }
   },
   "browserslist": [
     "> 1%",
