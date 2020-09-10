@@ -1,13 +1,13 @@
 <template>
   <Card title="WiFi">
     <form action="/sWifi" method="post" class="flex">
-      <h3>Wifi Client Mode</h3>
+      <h3>Wifi Client Mode <Tooltip text="Use this to connect to your existing router. If the connection is lost, it will automatically fall back to creating it's own Access Point as configured below." /></h3>
        <div class="formgrid">
         <input type="checkbox" id="sta_enable" name="sta_enable" v-model="conf.sta_enable">
-        <label for="sta_enable">Enable WiFi Client</label>
+        <label for="sta_enable">Enable WiFi Client <Tooltip text="Enables connecting to your existing router" /></label>
 
         <input type="text" id="hostname" name="hostname" v-model="conf.hostname">
-        <label for="hostname">Hostname</label>
+        <label for="hostname">Hostname <Tooltip text="The name under which the device will be found in your network" /></label>
 
         <input type="text" id="sta_ssid" name="sta_ssid" v-model="conf.sta_ssid">
         <label for="sta_ssid">SSID</label>
@@ -15,7 +15,7 @@
         <input type="password" id="sta_pw" name="sta_pw" v-model="conf.sta_pw">
         <label for="sta_pw">WiFi Password</label>
       </div>
-      <h3>Wifi AP Mode</h3>
+      <h3>Wifi AP Mode <Tooltip text="Access Point Mode Configuration. This is the WiFi name and Password the device will use to create it's own access point." /></h3>
       <div class="formgrid">
         <input type="text" id="ap_ssid" name="ap_ssid" v-model="conf.ap_ssid">
         <label for="ap_ssid">SSID</label>
@@ -30,11 +30,13 @@
 
 <script>
 import Card from '@/components/Card.vue'
+import Tooltip from '@/components/Tooltip.vue'
 
 export default {
   name: 'WiFi',
   components: {
-    Card
+    Card,
+    Tooltip
   },
   data () {
     return {
@@ -111,4 +113,5 @@ h3 {
 a {
   color: #42b983;
 }
+
 </style>

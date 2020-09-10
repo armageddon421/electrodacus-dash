@@ -33,15 +33,15 @@ body  {
   font-weight: bold;
   color: #222;
   background-color: #477;
-  padding: 0.5em;
-  margin: 2px;
+  padding: 0.6em;
+  margin: 0.1em;
   text-decoration-line: none;
   -moz-text-decoration-line: none;
 }
 
 #nav a.router-link-exact-active {
   color: #fff;
-  background-color: #333;
+  background-color: slategrey;
 }
 
 </style>
