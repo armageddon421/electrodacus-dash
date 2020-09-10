@@ -1,5 +1,7 @@
 # electrodacus-dash
 
+Vue.js UI for electrocacus-esp32
+
 ## Project setup
 ```
 npm install
@@ -14,6 +16,7 @@ npm run serve
 ```
 npm run build
 ```
+Output is to ../electrodacus-esp32/data/dist
 
 ### Lints and fixes files
 ```
