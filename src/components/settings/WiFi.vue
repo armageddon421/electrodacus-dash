@@ -50,6 +50,14 @@ export default {
         ap_pw: 'electrodacus'
       }
     }
+  },
+  mounted () {
+    this.$http.get('/cfg/wifi')
+      .then(response => {
+        console.log(response)
+        this.conf = response.data
+        this.loaded = true
+      })
   }
 }
 </script>
