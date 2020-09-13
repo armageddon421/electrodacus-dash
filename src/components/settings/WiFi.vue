@@ -1,6 +1,6 @@
 <template>
   <Card title="WiFi">
-    <form action="/sWifi" method="post" class="flex">
+    <form class="flex">
       <h3>Wifi Client Mode <Tooltip text="Use this to connect to your existing router. If the connection is lost, it will automatically fall back to creating it's own Access Point as configured below." /></h3>
        <div class="formgrid">
         <input type="checkbox" id="sta_enable" name="sta_enable" v-model="conf.sta_enable">
@@ -18,12 +18,12 @@
       <h3>Wifi AP Mode <Tooltip text="Access Point Mode Configuration. This is the WiFi name and Password the device will use to create it's own access point." /></h3>
       <div class="formgrid">
         <input type="text" id="ap_ssid" name="ap_ssid" v-model="conf.ap_ssid">
-        <label for="ap_ssid">SSID</label>
+        <label for="ap_ssid">SSID <Tooltip text="If empty, default name will be used. Default is SBMS-[UUID]" /></label>
 
         <input type="password" id="ap_pw" name="ap_pw" v-model="conf.ap_pw">
-        <label for="ap_pw">WiFi Password</label>
+        <label for="ap_pw">WiFi Password <Tooltip text="If empty, default password will be used. Default password is electrodacus" /></label>
       </div>
-      <input type="submit" value="Save" name="submit" class="foot">
+      <button class="foot" @click.prevent="save">Save</button>
     </form>
   </Card>
 </template>
@@ -54,10 +54,17 @@ export default {
   mounted () {
     this.$http.get('/cfg/wifi')
       .then(response => {
-        console.log(response)
         this.conf = response.data
         this.loaded = true
       })
+  },
+  methods: {
+    save: function (event) {
+      this.$http.post('/cfg/wifi', this.conf)
+        .then(response => {
+          console.log(response)
+        })
+    }
   }
 }
 </script>
