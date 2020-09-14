@@ -1,5 +1,5 @@
 <template>
-  <Card title="MQTT">
+  <Card title="MQTT" v-bind:unsaved="changed">
     <form class="flex">
       <h3>Connection <Tooltip text="MQTT is an IoT message passing protocol. Use this to publish your SBMS status to an MQTT broker every second." /></h3>
        <div class="formgrid">
@@ -64,6 +64,15 @@ export default {
         .then(response => {
           console.log(response)
         })
+    }
+  },
+  watch: {
+    conf: {
+      handler (val) {
+        this.changed = true
+        console.log('changed')
+      },
+      deep: true
     }
   }
 }

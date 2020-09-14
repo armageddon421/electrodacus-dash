@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-      <h3 class="title">{{title}}</h3>
+      <h3 class="title">{{title}} <font-awesome-icon v-if="unsaved" icon="save" style="color: red" /></h3>
       <div class="content">
         <slot />
       </div>
@@ -12,7 +12,8 @@
 export default {
   name: 'Card',
   props: {
-    title: String
+    title: String,
+    unsaved: Boolean
   }
 }
 </script>

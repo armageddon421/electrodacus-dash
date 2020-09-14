@@ -1,5 +1,5 @@
 <template>
-  <Card title="WiFi">
+  <Card title="WiFi" v-bind:unsaved="changed">
     <form class="flex">
       <h3>Wifi Client Mode <Tooltip text="Use this to connect to your existing router. If the connection is lost, it will automatically fall back to creating it's own Access Point as configured below." /></h3>
        <div class="formgrid">
@@ -41,6 +41,7 @@ export default {
   data () {
     return {
       loaded: false,
+      changed: false,
       conf: {
         hostname: '',
         sta_ssid: '',
@@ -56,6 +57,7 @@ export default {
       .then(response => {
         this.conf = response.data
         this.loaded = true
+        this.changed = false
       })
   },
   methods: {
@@ -63,7 +65,17 @@ export default {
       this.$http.post('/cfg/wifi', this.conf)
         .then(response => {
           console.log(response)
+          this.changed = false
         })
+    }
+  },
+  watch: {
+    conf: {
+      handler (val) {
+        this.changed = true
+        console.log('changed')
+      },
+      deep: true
     }
   }
 }

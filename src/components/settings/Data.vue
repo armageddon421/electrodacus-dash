@@ -1,5 +1,5 @@
 <template>
-  <Card title="Data">
+  <Card title="Data" v-bind:unsaved="changed">
     <form class="flex">
       <h3>SBMS <Tooltip text="This data package contains most of the relevant live-information about the SBMS." /></h3>
        <div class="formgrid">
@@ -52,6 +52,15 @@ export default {
         .then(response => {
           console.log(response)
         })
+    }
+  },
+  watch: {
+    conf: {
+      handler (val) {
+        this.changed = true
+        console.log('changed')
+      },
+      deep: true
     }
   }
 }

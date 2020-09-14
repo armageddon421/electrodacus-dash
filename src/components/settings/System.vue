@@ -1,5 +1,5 @@
 <template>
-  <Card title="System">
+  <Card title="System" v-bind:unsaved="changed">
     <form class="flex">
       <h3>Development<Tooltip text="These are development settings and tools and you should normally not need to touch them." /></h3>
        <div class="formgrid">
@@ -44,6 +44,15 @@ export default {
         .then(response => {
           console.log(response)
         })
+    }
+  },
+  watch: {
+    conf: {
+      handler (val) {
+        this.changed = true
+        console.log('changed')
+      },
+      deep: true
     }
   }
 }
