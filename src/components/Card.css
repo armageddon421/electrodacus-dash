@@ -1,0 +1,56 @@
+.formgrid {
+    display: grid;
+    grid-template-columns: 1fr 1em 2fr;
+    grid-gap: 0.4em 0.6em;
+    grid-auto-flow: dense;
+    align-items: center;
+  }
+  
+  label {
+    float: left;
+    width: 30%;
+    text-align: right;
+    padding: 0.25em 1em 0 0;
+  }
+  
+  input[type="checkbox"] + label, input[type="radio"] + label {
+    width: auto;
+    text-align: left;
+  }
+  
+  label, input[type="checkbox"] + label, input[type="radio"] + label {
+    width: auto;
+    padding: 0;
+    margin: 0;
+  }
+  
+  input, output, textarea, select, button, a {
+    grid-column: 2 / 4;
+    width: auto;
+    margin: 0;
+  }
+  
+  input[type="checkbox"], input[type="radio"] {
+    grid-column: 1 / 3;
+    justify-self: end;
+    margin: 0;
+  }
+  
+  textarea + label {
+    align-self: start;
+  }
+  
+  .foot {
+    width: 100%;
+    margin-top: 0.6em;
+  }
+  
+  h3 {
+    padding: 0.2em;
+    margin: 0.4em 0;
+    background-color: rgb(199, 209, 223);
+  }
+  
+  a {
+    color: #42b983;
+  }

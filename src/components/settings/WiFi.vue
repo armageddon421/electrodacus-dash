@@ -15,7 +15,7 @@
         <input type="password" id="sta_pw" name="sta_pw" v-model="conf.sta_pw" v-bind:disabled="!conf.sta_enable">
         <label for="sta_pw">WiFi Password</label>
       </div>
-      <h3>Wifi AP Mode <Tooltip text="Access Point Mode Configuration. This is the WiFi name and Password the device will use to create it's own access point." /></h3>
+      <h3>Wifi AP Mode <Tooltip text="Access Point Mode Configuration. This is the WiFi name and Password the device will use to create it's own access point. Please remember this very well as there is currently no way to reset it without reflashing the software via cable." /></h3>
       <div class="formgrid">
         <input type="text" id="ap_ssid" name="ap_ssid" v-model="conf.ap_ssid">
         <label for="ap_ssid">SSID <Tooltip text="If empty, default name will be used. Default is SBMS-[UUID]" /></label>
@@ -69,64 +69,5 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-.formgrid {
-  display: grid;
-  grid-template-columns: 1fr 1em 2fr;
-  grid-gap: 0.4em 0.6em;
-  grid-auto-flow: dense;
-  align-items: center;
-}
-
-label {
-  float: left;
-  width: 30%;
-  text-align: right;
-  padding: 0.25em 1em 0 0;
-}
-
-input[type="checkbox"] + label, input[type="radio"] + label {
-  width: auto;
-  text-align: left;
-}
-
-label, input[type="checkbox"] + label, input[type="radio"] + label {
-  width: auto;
-  padding: 0;
-  margin: 0;
-}
-
-input, output, textarea, select, button {
-  grid-column: 2 / 4;
-  width: auto;
-  margin: 0;
-}
-
-input[type="checkbox"], input[type="radio"] {
-  grid-column: 1 / 3;
-  justify-self: end;
-  margin: 0;
-}
-
-textarea + label {
-  align-self: start;
-}
-
-.foot {
-  width: 100%;
-  margin-top: 0.6em;
-}
-
-h3 {
-  padding: 0.2em;
-  margin: 0.4em 0;
-  background-color: rgb(199, 209, 223);
-}
-
-a {
-  color: #42b983;
-}
-
+<style scoped src="@/components/Card.css">
 </style>
