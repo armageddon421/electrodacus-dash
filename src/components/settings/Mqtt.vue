@@ -1,7 +1,7 @@
 <template>
   <Card title="MQTT" v-bind:unsaved="changed">
     <form class="flex">
-      <h3>Connection <Tooltip text="MQTT is an IoT message passing protocol. Use this to publish your SBMS status to an MQTT broker every second." /></h3>
+      <h3>Connection <Tooltip text="MQTT is an IoT message passing protocol. Use this to publish your SBMS status to an MQTT broker every second. The data will be in JSON format." /></h3>
        <div class="formgrid">
         <input type="checkbox" id="mq_enabled" name="mq_enabled" v-model="conf.mq_enabled">
         <label for="mq_enabled">Enable MQTT client <Tooltip text="Enables the connection to an MQTT broker" /></label>
@@ -13,7 +13,7 @@
         <label for="mq_port">Server Port <Tooltip text="Default is 1883" /></label>
 
         <input type="text" id="mq_prefix" name="mq_prefix" v-model="conf.mq_prefix" v-bind:disabled="!conf.mq_enabled">
-        <label for="mq_prefix">MQTT prefix <Tooltip text="currently, only the topic 'sbms' is published. The data is in JSON format. The prefix will be prepended to that: [prefix]sbms. A prefix of '/' will become '/sbms'. You could do '/solar/battery/' to get '/solar/battery/sbms'." /></label>
+        <label for="mq_prefix">MQTT prefix <Tooltip text="Different topics will be published as configured in the Data section. The prefix will be prepended to the topics: [prefix]sbms. A prefix of '/' will become '/[topic]'. You could do '/solar/battery/' to get '/solar/battery/[topic]'." /></label>
       </div>
       <h3>Security <Tooltip text="For now only unencrypted username/password connections or anonymous connections are supported." /></h3>
       <div class="formgrid">

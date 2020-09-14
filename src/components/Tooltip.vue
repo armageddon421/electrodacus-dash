@@ -5,7 +5,7 @@
     </div>
 
     <a class="icon" @mouseover="show" @mouseleave="hide">
-        (i)
+        <font-awesome-icon icon="info-circle" />
     </a>
   </span>
 </template>

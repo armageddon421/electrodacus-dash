@@ -7,7 +7,7 @@
         <label for="sbms_enabled">Enable</label>
 
         <input type="checkbox" id="sbms_diff" name="sbms_diff" v-model="conf.sbms_diff" v-bind:disabled="!conf.sbms_enabled">
-        <label for="sbms_diff">Include max cell delta<Tooltip text="This will include the field 'delta' that shows the maximum cell delta." /></label>
+        <label for="sbms_diff">Include max cell delta <Tooltip text="This will include the field 'delta' that shows the maximum cell delta." /></label>
       </div>
       <h3>S2 <Tooltip text="This contains information about what cells are currently being balanced." /></h3>
       <div class="formgrid">
