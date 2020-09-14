@@ -1,5 +1,5 @@
 <template>
-  <Card title="WiFi" v-bind:unsaved="changed">
+  <Card title="WiFi" v-bind:unsaved="changed" v-bind:loading="!loaded">
     <form class="flex">
       <h3>Wifi Client Mode <Tooltip text="Use this to connect to your existing router. If the connection is lost, it will automatically fall back to creating it's own Access Point as configured below." /></h3>
        <div class="formgrid">

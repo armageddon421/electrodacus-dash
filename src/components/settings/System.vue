@@ -1,5 +1,5 @@
 <template>
-  <Card title="System" v-bind:unsaved="changed">
+  <Card title="System" v-bind:unsaved="changed" v-bind:loading="!loaded">
     <form class="flex">
       <h3>Development <Tooltip text="These are development settings and tools and you should normally not need to touch them." /></h3>
        <div class="formgrid">

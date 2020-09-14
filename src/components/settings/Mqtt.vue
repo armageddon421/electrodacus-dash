@@ -1,5 +1,5 @@
 <template>
-  <Card title="MQTT" v-bind:unsaved="changed">
+  <Card title="MQTT" v-bind:unsaved="changed" v-bind:loading="!loaded">
     <form class="flex">
       <h3>Connection <Tooltip text="MQTT is an IoT message passing protocol. Use this to publish your SBMS status to an MQTT broker every second. The data will be in JSON format." /></h3>
        <div class="formgrid">

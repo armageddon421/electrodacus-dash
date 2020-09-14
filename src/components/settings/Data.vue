@@ -1,5 +1,5 @@
 <template>
-  <Card title="Data" v-bind:unsaved="changed">
+  <Card title="Data" v-bind:unsaved="changed" v-bind:loading="!loaded">
     <form class="flex">
       <h3>SBMS <Tooltip text="This data package contains most of the relevant live-information about the SBMS." /></h3>
        <div class="formgrid">
