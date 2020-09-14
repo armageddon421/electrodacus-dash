@@ -73,8 +73,9 @@ export default {
     conf: {
       handler (val) {
         if (this.justLoaded) {
-          this.changed = true
           this.justLoaded = false
+        } else {
+          this.changed = true
         }
       },
       deep: true
