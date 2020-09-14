@@ -1,5 +1,5 @@
 <template>
-    <magic-grid v-bind:gap="16" v-bind:animate="false" v-bind:maxColWidth="480">
+    <magic-grid v-bind:gap="16" v-bind:animate="false" v-bind:maxColWidth="420">
         <slot />
     </magic-grid>
 </template>

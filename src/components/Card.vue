@@ -21,7 +21,7 @@ export default {
 <style scoped>
 .card {
   background-color: white;
-  width: 480px;
+  width: 420px;
 }
 
 .title {
