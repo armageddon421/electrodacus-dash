@@ -41,6 +41,8 @@ export default {
   data () {
     return {
       loaded: false,
+      justLoaded: false,
+      changed: false,
       conf: {
         mq_enabled: false,
         mq_hostname: '',
@@ -56,6 +58,7 @@ export default {
       .then(response => {
         this.conf = response.data
         this.loaded = true
+        this.justLoaded = true
       })
   },
   methods: {
@@ -69,7 +72,10 @@ export default {
   watch: {
     conf: {
       handler (val) {
-        if (this.loaded) this.changed = true
+        if (this.justLoaded) {
+          this.changed = true
+          this.justLoaded = false
+        }
       },
       deep: true
     }
