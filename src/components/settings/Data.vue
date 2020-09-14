@@ -54,6 +54,7 @@ export default {
       this.$http.post('/cfg/data', this.conf)
         .then(response => {
           console.log(response)
+          this.changed = false
         })
     }
   },

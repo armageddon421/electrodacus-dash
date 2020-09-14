@@ -66,6 +66,7 @@ export default {
       this.$http.post('/cfg/mqtt', this.conf)
         .then(response => {
           console.log(response)
+          this.changed = false
         })
     }
   },
