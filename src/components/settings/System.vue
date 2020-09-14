@@ -49,8 +49,7 @@ export default {
   watch: {
     conf: {
       handler (val) {
-        this.changed = true
-        console.log('changed')
+        if (this.loaded) this.changed = true
       },
       deep: true
     }
