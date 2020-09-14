@@ -6,13 +6,13 @@
         <input type="checkbox" id="sta_enable" name="sta_enable" v-model="conf.sta_enable">
         <label for="sta_enable">Enable WiFi Client <Tooltip text="Enables connecting to your existing router" /></label>
 
-        <input type="text" id="hostname" name="hostname" v-model="conf.hostname">
+        <input type="text" id="hostname" name="hostname" v-model="conf.hostname" v-bind:disabled="!conf.sta_enable">
         <label for="hostname">Hostname <Tooltip text="The name under which the device will be found in your network" /></label>
 
-        <input type="text" id="sta_ssid" name="sta_ssid" v-model="conf.sta_ssid">
+        <input type="text" id="sta_ssid" name="sta_ssid" v-model="conf.sta_ssid" v-bind:disabled="!conf.sta_enable">
         <label for="sta_ssid">SSID</label>
 
-        <input type="password" id="sta_pw" name="sta_pw" v-model="conf.sta_pw">
+        <input type="password" id="sta_pw" name="sta_pw" v-model="conf.sta_pw" v-bind:disabled="!conf.sta_enable">
         <label for="sta_pw">WiFi Password</label>
       </div>
       <h3>Wifi AP Mode <Tooltip text="Access Point Mode Configuration. This is the WiFi name and Password the device will use to create it's own access point." /></h3>
