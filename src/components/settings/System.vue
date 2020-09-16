@@ -6,6 +6,9 @@
         <input type="checkbox" id="ota_limit" name="ota_limit" v-model="conf.ota_limit">
         <label for="ota_limit">Limit OTA to the first 5 minutes after reboot <Tooltip text="Security feature, makes sure you had physical acces to reboot the device first." /></label>
 
+        <input type="checkbox" id="ota_arduino" name="ota_arduino" v-model="conf.ota_arduino">
+        <label for="ota_arduino">Enable ArduinoOTA<Tooltip text="Enable OTA updates directly from PlatformIO using espota." /></label>
+
         <a href="/debug" target="_blank">CPU stats</a>
       </div>
       <button class="foot" @click.prevent="save">Save</button>
@@ -29,7 +32,8 @@ export default {
       justLoaded: false,
       changed: false,
       conf: {
-        ota_limit: true
+        ota_limit: true,
+        ota_arduino: false
       }
     }
   },
