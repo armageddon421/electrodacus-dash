@@ -40,7 +40,7 @@ export default {
   },
   data () {
     return {
-      loaded: false,
+      loaded: window.webpackHotUpdate !== undefined, // show content instead of loading animation in dev mode
       justLoaded: false,
       changed: false,
       conf: {
