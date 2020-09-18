@@ -1,7 +1,7 @@
 <template>
   <Card title="Status" v-bind:unsaved="false" v-bind:loading="false">
     <div v-if="sbms.time !== undefined">
-      {{sbms.time.hour}}:{{sbms.time.minute}}:{{sbms.time.second}}
+      {{("00"+sbms.time.hour).substr(-2)}}:{{("00"+sbms.time.minute).substr(-2)}}:{{("00"+sbms.time.second).substr(-2)}}
     </div>
     <div v-if="sbms.soc !== undefined">
       {{sbms.soc}}%
