@@ -42,6 +42,9 @@ export default {
         // events server failed.  No automatic attempts to reconnect will be made.
         console.error('Failed to connect to server', err)
       })
+  },
+  beforeDestroy: function () {
+    msgServer.close()
   }
 }
 </script>

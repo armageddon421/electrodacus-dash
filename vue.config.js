@@ -3,7 +3,7 @@ module.exports = {
   pluginOptions: {
     compression:{
       gzip: {
-        filename: '[path].gz[query]',
+        filename: '[file].gz[query]',
         algorithm: 'gzip',
         include: /\.(js|css|html|svg|json)(\?.*)?$/i,
         minRatio: 0.8,
@@ -27,14 +27,14 @@ module.exports = {
   },
   css: {
     extract: {
-      filename: '[hash:8].css',
-      chunkFilename: '[chunkhash:8].css',
+      filename: '[contenthash:8].css',
+      chunkFilename: '[contenthash:8].css',
     },
   },
   configureWebpack: {
     output: {
-      filename: '[hash:8].js',
-      chunkFilename: '[chunkhash:8].js'
+      filename: '[contenthash:8].js',
+      chunkFilename: '[contenthash:8].js'
     }
   }
   
